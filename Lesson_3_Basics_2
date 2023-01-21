@@ -1,0 +1,22 @@
+pragma solidity ^0.4.25;
+
+contract ZombieFactory {
+
+    uint dnaDigits = 16;
+    uint dnaModulus = 10 ** dnaDigits;
+
+    struct Zombie {
+        string name;
+        uint dna;
+    }
+
+    Zombie[] public zombies;
+    //функция создающая новых зомби
+    function _createZombie(string memory _name, uint _dna) private {
+        zombies.push(Zombie(_name, _dna));
+    }
+    //функция генерирующая рандомные "днк"
+    function _generateRandomDna(string memory _str) private view returns (uint) {
+    }
+
+}
